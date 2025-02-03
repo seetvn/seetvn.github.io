@@ -1,63 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Markdown Renderer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    pre { background-color: #f6f8fa; padding: 15px; border-radius: 5px; }
-  </style>
-</head>
-<body>
-  <div id="markdown-content"></div>
-  "Skibidi toilet"
-
-  <script type="module">
-    import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
-    import hljs from 'https://cdn.jsdelivr.net/npm/highlight.js/es/core.js';
-    import python from 'https://cdn.jsdelivr.net/npm/highlight.js/es/languages/python.js';
-    import javascript from 'https://cdn.jsdelivr.net/npm/highlight.js/es/languages/javascript.js';
-
-    // Register the languages with highlight.js
-    hljs.registerLanguage('python', python);
-    hljs.registerLanguage('javascript', javascript);
-
-    // Configure marked to use highlight.js
-    marked.setOptions({
-      highlight: (code, lang) => {
-        if (hljs.getLanguage(lang)) {
-          return hljs.highlight(code, { language: lang }).value;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oleg Marasov - CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #1b2f2f;
+            color: #d0e0d0;
+            margin: 20px;
         }
-        return hljs.highlightAuto(code).value;
-      },
-    });
 
-    // Sample Markdown content
-    const markdownText = `
-# Markdown Renderer in JS
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #253f3f;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
 
-Here is some **Python** code:
+        h1, h2, h3 {
+            color: #a9cfa9;
+        }
 
-\`\`\`python
-def greet(name):
-    print(f"Hello, {name}!")
-greet('World')
-\`\`\`
+        a {
+            color: #82c582;
+        }
 
-And here’s some **JavaScript**:
+        .contact {
+            margin-bottom: 20px;
+        }
 
-\`\`\`javascript
-function greet(name) {
-    console.log(\`Hello, \${name}!\`);
-}
-greet('World');
-\`\`\`
-    `;
+        .contact p {
+            margin: 5px 0;
+        }
 
-    // Render Markdown and insert into the page
-    document.getElementById('markdown-content').innerHTML = marked(markdownText);
-  </script>
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #2e4e4e;
+            border-radius: 5px;
+            color: #d0e0d0;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #3c5f5f;
+        }
+
+        .tab.active {
+            background-color: #4e7f4e;
+            color: #fff;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: #b2d8b2;
+        }
+
+        .date {
+            float: right;
+            color: #a1bfa1;
+        }
+
+        .skills, .extra {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li, .extra li {
+            margin-bottom: 5px;
+        }
+
+        .about-me {
+            background-color: #2a4747;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>OLEG MARASOV</h1>
+
+        <div class="contact">
+            <p>📞 +44 7123 456 789</p>
+            <p>✉️ oleg@marasov.net</p>
+            <p>🌐 <a href="http://www.olegmarasov.com" target="_blank">www.olegmarasov.com</a></p>
+        </div>
+
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>I'm Oleg Marasov, a dedicated software developer and co-founder of SportVision, where we innovate sports analytics with state-of-the-art computer vision technology. I hold a first-class honours degree in Computer Science with AI from the University of Belgrade. My professional journey includes leading technical teams at EcoData and crafting dynamic web applications at ConnectApp. I excel in fast-paced environments, bringing projects from concept to completion, and I'm committed to making a significant impact in the tech industry.</p>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showSection('about')">About Me</div>
+            <div class="tab" onclick="showSection('work')">Work Experience</div>
+            <div class="tab" onclick="showSection('education')">Education</div>
+            <div class="tab" onclick="showSection('skills')">Skills</div>
+            <div class="tab" onclick="showSection('extra')">Extra</div>
+        </div>
+
+        <div id="about" class="section active">
+            <h2>ABOUT ME</h2>
+            <p>I'm a software developer looking to make a big impact. I’m the co-founder of SportVision, a sports tech company working at the forefront of computer vision.</p>
+        </div>
+
+        <div id="work" class="section">
+            <h2>WORK EXPERIENCE</h2>
+            <p class="job-title">Technical Lead - EcoData <span class="date">Aug 2022 - Apr 2024</span></p>
+            <ul>
+                <li>VC-backed startup with clients such as Gazprom, Sberbank</li>
+                <li>Managed a team of three developers</li>
+                <li>Utilized LLMs and machine learning models to extract environmental data from reports</li>
+                <li>Designed and implemented an API using Ruby on Rails</li>
+                <li>Performed data analysis with Python</li>
+            </ul>
+
+            <p class="job-title">CTO / Co-founder - SportVision <span class="date">Apr 2024 - Present</span></p>
+            <ul>
+                <li>Early-stage startup that extracts data from football games using computer vision</li>
+                <li>Provides teams with data-driven performance insights</li>
+                <li>Developed a human-in-the-loop computer vision pipeline from scratch</li>
+            </ul>
+
+            <p class="job-title">Junior Developer - ConnectApp <span class="date">Jul 2021 - Aug 2022</span></p>
+            <ul>
+                <li>Created user interfaces using React and Node.js</li>
+                <li>Built features to visualise platform analytics</li>
+                <li>Mentored by Alexei Kostarev, who later joined Yandex</li>
+                <li>Gained comprehensive insights into web development</li>
+            </ul>
+        </div>
+
+        <div id="education" class="section">
+            <h2>EDUCATION</h2>
+            <p class="job-title">University of Belgrade - Computer Science with AI <span class="date">Sep 2021 - Jun 2024</span></p>
+            <ul>
+                <li>Graduated with 1st-class honours</li>
+                <li>Top 5 in Eastern Europe for computer science</li>
+            </ul>
+
+            <p class="job-title">A-Levels</p>
+            <ul>
+                <li>4 A*s in Mathematics, Further Mathematics, Physics, and Computer Science</li>
+            </ul>
+        </div>
+
+        <div id="skills" class="section">
+            <h2>SKILLS</h2>
+            <ul class="skills">
+                <li>Proficient in Python, JavaScript/Node, Ruby</li>
+                <li>Proactive, high-agency approach</li>
+                <li>Project planning and management</li>
+                <li>Technical writing and communication</li>
+            </ul>
+        </div>
+
+        <div id="extra" class="section">
+            <h2>EXTRA</h2>
+            <ul class="extra">
+                <li>Moscow Institute of Physics and Technology - Innovation Programme</li>
+                <li>TEDx talk on project-based learning in tech</li>
+            </ul>
+        </div>
+
+        <p>For more projects and details, visit <a href="http://www.olegmarasov.com" target="_blank">olegmarasov.com</a>.</p>
+        <p>References available on request.</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            const tabs = document.querySelectorAll('.tab');
+
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
+
 </html>
