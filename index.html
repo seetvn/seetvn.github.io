@@ -4,38 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oleg Marasov - CV</title>
+    <title>Steven Wai Yan - CV</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #1b2f2f;
-            color: #d0e0d0;
+            background-color: #e6f7ff;
+            color: #333;
             margin: 20px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background: #253f3f;
+            background: #ffffff;
             padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         h1, h2, h3 {
-            color: #a9cfa9;
+            color: #005f99;
         }
 
         a {
-            color: #82c582;
+            color: #007acc;
+            text-decoration: none;
         }
 
-        .contact {
+        .contact-info {
             margin-bottom: 20px;
         }
 
-        .contact p {
+        .contact-info p {
             margin: 5px 0;
         }
 
@@ -48,19 +49,18 @@
         .tab {
             padding: 10px 20px;
             cursor: pointer;
-            background-color: #2e4e4e;
+            background-color: #cce7ff;
             border-radius: 5px;
-            color: #d0e0d0;
             transition: background-color 0.3s;
         }
 
         .tab:hover {
-            background-color: #3c5f5f;
+            background-color: #b3d9ff;
         }
 
         .tab.active {
-            background-color: #4e7f4e;
-            color: #fff;
+            background-color: #005f99;
+            color: #ffffff;
         }
 
         .section {
@@ -71,123 +71,152 @@
             display: block;
         }
 
-        .job-title {
-            font-weight: bold;
-            color: #b2d8b2;
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
         }
 
-        .date {
-            float: right;
-            color: #a1bfa1;
-        }
-
-        .skills, .extra {
-            list-style: none;
+        .skills {
+            list-style-type: none;
             padding: 0;
         }
 
-        .skills li, .extra li {
-            margin-bottom: 5px;
-        }
-
-        .about-me {
-            background-color: #2a4747;
-            padding: 15px;
+        .skills li {
+            display: inline-block;
+            margin-right: 10px;
+            background-color: #cce7ff;
+            padding: 5px 10px;
             border-radius: 5px;
-            margin-bottom: 20px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>OLEG MARASOV</h1>
+        <h1>Steven Wai Yan</h1>
 
-        <div class="contact">
-            <p>📞 +44 7123 456 789</p>
-            <p>✉️ oleg@marasov.net</p>
-            <p>🌐 <a href="http://www.olegmarasov.com" target="_blank">www.olegmarasov.com</a></p>
-        </div>
-
-        <div class="about-me">
-            <h2>About Me</h2>
-            <p>I'm Oleg Marasov, a dedicated software developer and co-founder of SportVision, where we innovate sports analytics with state-of-the-art computer vision technology. I hold a first-class honours degree in Computer Science with AI from the University of Belgrade. My professional journey includes leading technical teams at EcoData and crafting dynamic web applications at ConnectApp. I excel in fast-paced environments, bringing projects from concept to completion, and I'm committed to making a significant impact in the tech industry.</p>
+        <div class="contact-info">
+            <p>📞 <a href="tel:+447436591460">+44 7436 591460</a></p>
+            <p>✉️ <a href="mailto:waiyansteven2002@gmail.com">waiyansteven2002@gmail.com</a></p>
+            <p>🌐 <a href="https://github.com/seetvn" target="_blank">github.com/seetvn</a></p>
+            <p>🔗 <a href="https://www.linkedin.com/in/steven-wai-yan-2b7378205/" target="_blank">linkedin.com/in/steven-wai-yan-2b7378205/</a></p>
         </div>
 
         <div class="tabs">
-            <div class="tab active" onclick="showSection('about')">About Me</div>
-            <div class="tab" onclick="showSection('work')">Work Experience</div>
-            <div class="tab" onclick="showSection('education')">Education</div>
+            <div class="tab active" onclick="showSection('education')">Education</div>
+            <div class="tab" onclick="showSection('experience')">Experience</div>
+            <div class="tab" onclick="showSection('projects')">Projects</div>
             <div class="tab" onclick="showSection('skills')">Skills</div>
-            <div class="tab" onclick="showSection('extra')">Extra</div>
         </div>
 
-        <div id="about" class="section active">
-            <h2>ABOUT ME</h2>
-            <p>I'm a software developer looking to make a big impact. I’m the co-founder of SportVision, a sports tech company working at the forefront of computer vision.</p>
+        <div id="education" class="section active">
+            <h2>Education</h2>
+            <p><strong>MComp in Computer Science + Artificial Intelligence</strong>, University of Bath | Bath, U.K. (2021‑2025)</p>
+            <p>Master Thesis: <em>Transformers for Sign Language Recognition</em></p>
+            <p>Relevant Courses: Machine Learning, Natural Language Processing, Data Structures and Algorithms, Experimental Systems Project, Reinforcement Learning, Parallel Computing</p>
         </div>
 
-        <div id="work" class="section">
-            <h2>WORK EXPERIENCE</h2>
-            <p class="job-title">Technical Lead - EcoData <span class="date">Aug 2022 - Apr 2024</span></p>
+        <div id="experience" class="section">
+            <h2>Experience</h2>
+            <p><strong>Odicci, Junior Software Engineer (Intern)</strong> | London (Hybrid) (June 2023 ‑ April 2024)</p>
             <ul>
-                <li>VC-backed startup with clients such as Gazprom, Sberbank</li>
-                <li>Managed a team of three developers</li>
-                <li>Utilized LLMs and machine learning models to extract environmental data from reports</li>
-                <li>Designed and implemented an API using Ruby on Rails</li>
-                <li>Performed data analysis with Python</li>
+                <li>Worked with JQuery, Ruby on Rails, AngularJS, and PostgreSQL to solve front-end and back-end issues.</li>
+                <li>Integrated libraries like Mixpanel, Shopify, and Google Analytics into the platform.</li>
+                <li>Enhanced user experience and functionality for top-tier retail brands like ASDA Retail.</li>
             </ul>
 
-            <p class="job-title">CTO / Co-founder - SportVision <span class="date">Apr 2024 - Present</span></p>
+            <p><strong>SparkLayer, Software Engineer (Intern)</strong> (June 2024 ‑ September 2024)</p>
             <ul>
-                <li>Early-stage startup that extracts data from football games using computer vision</li>
-                <li>Provides teams with data-driven performance insights</li>
-                <li>Developed a human-in-the-loop computer vision pipeline from scratch</li>
-            </ul>
-
-            <p class="job-title">Junior Developer - ConnectApp <span class="date">Jul 2021 - Aug 2022</span></p>
-            <ul>
-                <li>Created user interfaces using React and Node.js</li>
-                <li>Built features to visualise platform analytics</li>
-                <li>Mentored by Alexei Kostarev, who later joined Yandex</li>
-                <li>Gained comprehensive insights into web development</li>
+                <li>Built a new platform integration on Wix as a microservice, enabling over 300 businesses to offer B2B wholesale services.</li>
+                <li>Designed and implemented frontend features using React and backend services with Next.js and Typescript.</li>
+                <li>Maintained infrastructure using Google Cloud Platform, GitHub Actions, Sentry, and Cloudflare Tunnel.</li>
             </ul>
         </div>
 
-        <div id="education" class="section">
-            <h2>EDUCATION</h2>
-            <p class="job-title">University of Belgrade - Computer Science with AI <span class="date">Sep 2021 - Jun 2024</span></p>
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+
+            <p><strong><a href="#" target="_blank">SparkLayer Wix Integration</a></strong> (June 2024 ‑ Sept 2024)</p>
             <ul>
-                <li>Graduated with 1st-class honours</li>
-                <li>Top 5 in Eastern Europe for computer science</li>
+                <li>Developed an MVP microservice for B2B wholesale on Wix using Typescript, NextJS, and React.</li>
+                <li>Implemented REST API endpoints for customer and product events, and tested with Postman and Cloudflare Tunnel.</li>
             </ul>
 
-            <p class="job-title">A-Levels</p>
+            <p><strong><a href="#" target="_blank">Slingo - Sign Language to Text Translator</a></strong> (Jan 2023 ‑ April 2023)</p>
             <ul>
-                <li>4 A*s in Mathematics, Further Mathematics, Physics, and Computer Science</li>
+                <li>Collaborated with a team to build a British Sign Language app with a CNN model achieving 91% accuracy.</li>
+                <li>Contributed to both frontend (React, Tailwind CSS) and backend (Express, MongoDB) development.</li>
+            </ul>
+
+            <p><strong><a href="#" target="_blank">Sentiment Analysis with IMDB Dataset</a></strong> (Dec 2023)</p>
+            <ul>
+                <li>Created a sentiment analysis model using Gaussian Naive Bayes, achieving 90% accuracy on test data.</li>
+                <li>Compared performance with transformer models like BERT and GPT‑3.</li>
+            </ul>
+
+            <p><strong><a href="#" target="_blank">TLDR Bot — Discord Chatbot</a></strong> (Jan 2023)</p>
+            <ul>
+                <li>Developed a Python chatbot that summarises Discord chat conversations using OpenAI's Davinci‑003.</li>
+                <li>Presented a working demo at Royal Hack 2023.</li>
+            </ul>
+
+            <p><strong><a href="#" target="_blank">Autopep8 Wrapper — CLI Tool</a></strong> (Dec 2024 ‑ Ongoing)</p>
+            <ul>
+                <li>Built a command-line tool to automatically format Python code according to PEP8 standards.</li>
+                <li>Utilised Python modules like Argparse and Subprocess to handle user input and script execution.</li>
             </ul>
         </div>
 
         <div id="skills" class="section">
-            <h2>SKILLS</h2>
+            <h2>Skills</h2>
             <ul class="skills">
-                <li>Proficient in Python, JavaScript/Node, Ruby</li>
-                <li>Proactive, high-agency approach</li>
-                <li>Project planning and management</li>
-                <li>Technical writing and communication</li>
+                <li>Python</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>Ruby</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>C#</li>
+                <li>TypeScript</li>
+                <li>Go</li>
+                <li>Git</li>
+                <li>Bash</li>
+                <li>LaTeX</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+
+            <h3>Web Frameworks</h3>
+            <ul class="skills">
+                <li>Ruby on Rails</li>
+                <li>Express</li>
+                <li>Gin</li>
+                <li>Flask</li>
+                <li>Spring</li>
+                <li>JQuery</li>
+                <li>NextJS</li>
+                <li>Node</li>
+                <li>React</li>
+            </ul>
+
+            <h3>Database Technologies</h3>
+            <ul class="skills">
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
+                <li>SQLite</li>
+                <li>MySQL</li>
+            </ul>
+
+            <h3>Tools and OS</h3>
+            <ul class="skills">
+                <li>Git</li>
+                <li>Linux (Ubuntu)</li>
+                <li>Google Cloud Platform</li>
+                <li>Docker</li>
+                <li>Pulumi</li>
+                <li>Sentry</li>
             </ul>
         </div>
-
-        <div id="extra" class="section">
-            <h2>EXTRA</h2>
-            <ul class="extra">
-                <li>Moscow Institute of Physics and Technology - Innovation Programme</li>
-                <li>TEDx talk on project-based learning in tech</li>
-            </ul>
-        </div>
-
-        <p>For more projects and details, visit <a href="http://www.olegmarasov.com" target="_blank">olegmarasov.com</a>.</p>
-        <p>References available on request.</p>
     </div>
 
     <script>
