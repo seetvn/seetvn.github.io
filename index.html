@@ -15,19 +15,25 @@
 
   <script type="module">
     import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
-    import hljs from 'https://cdn.jsdelivr.net/npm/highlight.js/lib/core.js';
-    import python from 'https://cdn.jsdelivr.net/npm/highlight.js/lib/languages/python.js';
-    import javascript from 'https://cdn.jsdelivr.net/npm/highlight.js/lib/languages/javascript.js';
+    import hljs from 'https://cdn.jsdelivr.net/npm/highlight.js/es/core.js';
+    import python from 'https://cdn.jsdelivr.net/npm/highlight.js/es/languages/python.js';
+    import javascript from 'https://cdn.jsdelivr.net/npm/highlight.js/es/languages/javascript.js';
 
+    // Register the languages with highlight.js
     hljs.registerLanguage('python', python);
     hljs.registerLanguage('javascript', javascript);
 
+    // Configure marked to use highlight.js
     marked.setOptions({
       highlight: (code, lang) => {
-        return hljs.highlight(code, { language: lang }).value;
+        if (hljs.getLanguage(lang)) {
+          return hljs.highlight(code, { language: lang }).value;
+        }
+        return hljs.highlightAuto(code).value;
       },
     });
 
+    // Sample Markdown content
     const markdownText = `
 # Markdown Renderer in JS
 
@@ -49,6 +55,7 @@ greet('World');
 \`\`\`
     `;
 
+    // Render Markdown and insert into the page
     document.getElementById('markdown-content').innerHTML = marked(markdownText);
   </script>
 </body>
